@@ -1,76 +1,152 @@
-const mainContainerTag = document.querySelector(".main-container")
-const mainContainerTag2 = document.querySelector("main-container")
-
-const firstname = `Je m'appelle`
-const firstPart = ` Salim`
-const age = 23
-const sisterAge = 21
-let result1 = sisterAge * age
-let result = `Bonjour, ${firstname} ${firstPart} et j'ai ${sisterAge} ans`
-const myArray = [`Paul`, `Pierre`, `Mathilde`, `Simon`]
 
 
-const identity_1 = {
-    firstname: 'Salim',
-    lastname: 'El Hattab',
-    age: 35,
-    size: 178,
-    weight: 75,
-    town: {name: 'Bordeaux', population: 350000, superficy: 40}
+// let role = "user";
 
-}
+// let value1 = sum2args(8, 7)
+// let value2 = substract2args(value1, 10);
 
-const identity_2 = {
-    firstname: 'Pierre',
-    lastname: 'Durand',
-    age: 26,
-    size: 1.85,
-    weight: 80,
-    town: {name: 'Paris', population: 2000000, superficy:50}
-}
-
-let bordeauxDs, parisDs;
+// logMessage(value2)
 
 
-
-if (identity_1.imc > identity_2.imc) {
-
-    personInDensityCity = identity_1
-    personInSpreadCity = identity_2
-} else {
-    personInDensityCity = identity_2
-    personInSpreadCity = identity_1
-}
-
-calculDensity(identity_1)
-calculDensity(identity_2)
-
-if (identity_1.town.density > identity_2.town.density) {
-
-    personBigImc = identity_1
-    personSmallImc = identity_2
-} else {
-    personBigImc = identity_2
-    personSmallImc = identity_1
-}
-
-
-// formule de l'IMC : weight / size ** 2
-
-// mainContainerTag.
-// if (sisterAge > 30 || age > 32) {
-    // result = `au moins une condition est vraie`
-// } else {
-    // result = `aucune des conditions n'est vraie`
+// function sum2args(arg1, arg2) 
+//     // if (role !== "admin") return 0;
+//     let myResult = arg1 + arg2
+//     return myResult
 // }
 
-// mainContainerTag.textContent = `C'est ${personBigImc.firstname} qui a l'IMC la plus élevée : ${personBigImc.imc}.`
+function substract2args(a1, a2) {
+    return a1 - a2
+}
 
-mainContainerTag.textContent = `La ville de ${personInDensityCity.town.name} a une densité de ${personInSpreadCity.town.density} pers/km2`
-
-function calculDensity(person) {
-    let result = person.town.population / person.town.superficy;
-    person.town.density = result;
+function logMessage(arg) {
+    console.log(`Le résultat des 2 fonctions précédentes est ${arg} !`)
 }
 
 
+// const res = sumElements(myNumbers)
+// const res2 = sumElements(myNumbers2)
+
+// console.log(res);
+// console.log(res2);
+
+// function sumElements(arr) {
+//     let result = 0;
+
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] % 2 === 0) result += arr[i];
+
+
+//     }
+
+//     return result
+// }
+
+// function getMaximum(arr) {
+//     let result = arr[0];
+// }
+
+// for (let i = words.length - 1; i >= 0; i--) {
+//     sentence += words[i] +
+// }
+
+
+const myNumbers = [4, 6, 13, 9, 12, 11];
+const myNumbers2 = [40, 61, 13, 19, 12, 11];
+
+
+console.log(getMaximum(myNumbers2))
+function getMinimum(arr) {
+    let result = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < result) result = arr[i]
+    }
+    return result;
+}
+
+function getMaximum(arr) {
+    let result = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > result) result = arr[i]
+    }
+    return result;
+}
+
+
+// -----------------------------------------------------------------
+
+const pizzas = [
+    {
+        name: 'Margherita',
+        price: 11.50,
+        ingredients: ['mozzarella', 'tomate', 'basilic ', "huile d'olive"],
+        baseTomate: true
+    },
+    {
+        name: 'Regina',
+        price: 12,
+        ingredients: ['mozzarella', 'tomate', 'origan', 'jambon', 'champignons'],
+        baseTomate: true
+    },
+    {
+        name: '4 saisons',
+        price: 15,
+        ingredients: ['artichaut', 'courgette', 'poivron', 'mozzarella', 'oignon rouge'],
+        baseTomate: true
+    },
+    {
+        name: 'Napolitaine',
+        price: 14,
+        ingredients: ['tomate', 'mozzarella', 'anchois', 'olives noires', 'origan'],
+        baseTomate: true
+    },
+    {
+        name: '4 fromages',
+        price: 16,
+        ingredients: ['tomate', 'mozzarella', 'emmental', 'comté', 'roquefort'],
+        baseTomate: true
+    },
+    {
+        name: 'Montagnarde',
+        price: 19,
+        ingredients: ['mozzarella', 'reblochon', 'gruyère', 'oignon', 'champignon'],
+        baseTomate: false
+    },
+    {
+        name: 'Chèvre-miel',
+        price: 18,
+        ingredients: ['mozzarella', 'chèvre', 'miel'],
+        baseTomate: false
+    },
+    {
+        name: 'Hawaïenne',
+        price: 17,
+        ingredients: ['mozzarella', 'tomate', 'jambon', 'ananas'],
+        baseTomate: true
+    }
+]
+
+console.log(getAllNames(pizzas))
+
+function getAllNames(tab) {
+    let pizzaNames = [];
+
+    for (let i = 0; i < tab.length; i++) {
+        pizzaNames.push(tab[i].name)
+
+    }
+    return pizzaNames;
+
+}
+
+console.log(getIngredientsByPizzaName('Regina', pizzas));
+
+function getIngredientsByPizzaName(name, arr) {
+    let ingredients = []
+
+    //
+
+    return ingredients
+}
