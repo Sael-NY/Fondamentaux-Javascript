@@ -144,9 +144,69 @@ function getAllNames(tab) {
 console.log(getIngredientsByPizzaName('Regina', pizzas));
 
 function getIngredientsByPizzaName(name, arr) {
-    let ingredients = []
 
+
+    let targetPizza
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].name === name) {
+            targetPizza = arr[i];
+            break;
+        }
+    }
+    let result = []
+    if (targetPizza) {
+        console.log(targetPizza)
+        result = targetPizza.ingredients
+    }
     //
 
-    return ingredients
+    return result
 }
+
+// -------------------------------------------------------------------
+// const result = getAllIngredients(pizzas)
+// console.log(result)
+// function getAllIngredients(tableau) {
+//     let allIngredients = [];
+
+//     for (let i = 0; i < tableau.length; i++) {
+//         const currentPizza = tableau[i];
+//         // console.log(`mon indice i : ${i}`)
+//         for (let j = 0; j < currentPizza.ingredients.length; j++) {
+//             if (!allIngredients.includes(currentPizza.ingredients[j])) {
+
+//                 allIngredients.push(currentPizza.ingredients[j])
+//             }
+
+//         }
+//     }
+
+//     return allIngredients;
+// }
+
+
+// ------------------------------------------------------------------------
+
+const result = getPizzasByIngredientName(pizzas, `tomate`);
+console.log(result);
+
+function getPizzasByIngredientName(arr, ingredientName) {
+
+    let pizzaNames = [
+
+    ]
+    for (let i = 0; i < arr.length; i++) {
+        const currentPizza = arr[i]
+        if (currentPizza.ingredients.includes(ingredientName)) {
+            pizzaNames.push(currentPizza.name)
+        }
+
+    }
+
+    return pizzaNames
+}
+
+
+
+
