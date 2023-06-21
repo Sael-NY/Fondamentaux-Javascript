@@ -95,11 +95,116 @@ console.log(oldestMovie.title)
 
 // f. Logger tous les titres de film qui ont au moins 3 acteurs
 
+let movieTitles = []
+
+movies.forEach((currentElement) => {
+    if (currentElement.actors.length >= 3) {
+        movieTitles.push(currentElement.title)
+    }
+})
 
 
 
+
+
+const filteredMovies = movies.filter((el) => {
+    return el.actors.length >= 3
+})
+
+
+const filteredMovieTitles = filteredMovies.map((currentElement) => {
+    return currentElement.title
+})
+
+console.log(filteredMovieTitles)
+
+
+// ----------------------------------------
+
+// const arr = ['hello -- english', 'salut -- français', 'bye -- english', 'au revoir -- français', 'Guten Tag -- allemand']
+
+// const newArr = movies.map((movie)  => {
+//     return movie.title + '--super film'
+// })
+
+// function filterByLanguage(lang, array) {
+//     const filteredArr = array.filter((el) => {
+//         return el.includes(lang)
+//     })
+
+//     return filteredArr
+// }
+
+// const result = filterByLanguage('english', arr)
+
+// --------------------------------------------
+
+let words = ['fenetre', 'velux', 'porte', 'cheminée']
+
+const filteredWords = words.filter((word) => {
+    return word.length > 6
+})
+console.log(filteredWords)
 
 
 // 1. Ecrire une fonction qui prend en parametre le tableau movies et qui retourne un nouveau tableau de tous les titres de films
+
+function getAllTitles(arr) {
+
+    const mappedArr = arr.map((element) => {
+        return element.title
+    })
+
+    return mappedArr
+
+
+}
+
+const result = getAllTitles(movies)
+console.log(result)
 // 2. Ecrire une fonction qui prend en parametre une annee et un tableau (movies), et qui retourne un nouveau tableau de titres de film de l'annee specifiee
+
+
+
+function getMoviesByYear(annee, arr) {
+    const filteredArray = arr.filter((element) => {
+        return element.year === annee
+    })
+
+    const mappedFilteredArray = filteredArray.map((el) => {
+        return el.title
+    })
+
+
+    return mappedFilteredArray
+
+}
+
+const res = getMoviesByYear(1994, movies)
+
+
+console.log(res)
+
+
+
+
 // 3. Ecrire une fonction qui prend en parametre un realisateur et un tableau (movies), et qui retourne un nouveau tableau de tous les titres de films de ce realisateur
+
+
+function directorMovies(real, arr) {
+    const filteredMovie = arr.filter((element) => {
+        return element.director === real
+
+    })
+
+    const mapMovies = filteredMovie.map((element) => {
+        return element.title
+    })
+
+    return mapMovies
+}
+
+const res2 = directorMovies('Christopher Nolan', movies)
+
+
+console.log(res2)
