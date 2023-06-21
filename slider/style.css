@@ -27,7 +27,7 @@
 }
 
 .slider-frame {
-    margin: 33px auto;
+    margin: 33px auto 0;
     width: var(--img-width);
     height: var(--img-height);
 }
@@ -56,8 +56,6 @@
     height: var(--img-height);
     object-fit: fill;
     position: absolute;
-    transition-property: left;
-    transition-duration: 3s;
     user-select: none;
 }
 
@@ -91,6 +89,14 @@
     transform: translate(50%, -10%);
 }
 
+.btn-effect {
+    transform-origin: center center;
+}
+
+.btn-effect:active {
+    scale: 0.9;
+}
+
 .slider-legend-container {
     background-color: var(--transparent-grey);
     position: absolute;
@@ -106,4 +112,19 @@
     margin-left: 24px;
     margin-right: 10px;
     user-select: none;
+}
+
+.dots-container {
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background-color: var(--deep-blue);
+    margin: 5px;
+    cursor: pointer;
 }
