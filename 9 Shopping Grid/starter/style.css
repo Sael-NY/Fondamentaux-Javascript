@@ -5,7 +5,7 @@ body {
 }
 
 .ratings i {
-  color: #f5b027;
+  color: #5c0606;
 }
 
 .rate {
@@ -33,12 +33,12 @@ body {
 
 
 .card {
-  background: linear-gradient(rgb(44, 44, 42), rgb(208, 208, 208));
+  background: linear-gradient(rgb(44, 44, 42), rgb(135, 135, 135));
   
 }
 
 .row{
-row-gap: 10px;
-gap: 100px;
+/* row-gap: 10px;
+gap: 10px; */
   
 }

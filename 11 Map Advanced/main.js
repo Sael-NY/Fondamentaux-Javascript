@@ -112,5 +112,3 @@ function formatData3(arr) {
 
     console.log(result)
 }
-
-// 4. afficher un tableau de messages au format {mail: 'd.durand@example.com', message: 'Bonjour Daphné, votre adresse "21 rue Voltaire, 33400 Talence" est-elle correcte ?'}
